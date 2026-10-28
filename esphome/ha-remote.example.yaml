@@ -1,0 +1,43 @@
+# Generic starter configuration. Copy this to ha-remote.yaml and replace every
+# example Home Assistant entity with one from your installation.
+
+substitutions:
+  device_name: ha-remote
+  friendly_name: HA Remote
+
+packages:
+  language: !include remote/lang/en.yaml
+  core: !include remote/core.yaml
+
+  lights: !include remote/lights/page.yaml
+  light_living_room: !include
+    file: remote/lights/light.yaml
+    vars:
+      key: living_room
+      name: Living room
+      entity: light.living_room
+      icon: "\U000F0335"
+  light_kitchen: !include
+    file: remote/lights/light.yaml
+    vars:
+      key: kitchen
+      name: Kitchen
+      entity: light.kitchen
+      icon: "\U000F0A70"
+
+  led: !include remote/led/page.yaml
+  led_accent: !include
+    file: remote/led/zone.yaml
+    vars:
+      key: accent
+      name: Accent
+      entity: light.accent_lights
+
+  power: !include
+    file: remote/power/page.yaml
+    vars:
+      power_sensor: sensor.home_power
+      max_power_w: "3500"
+      max_power_label: "3.5 kW"
+
+  settings: !include remote/settings.yaml

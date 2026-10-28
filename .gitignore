@@ -1,0 +1,15 @@
+esphome/secrets.yaml
+**/secrets.yaml
+!**/secrets.yaml.example
+.esphome/
+**/.esphome/
+.pioenvs/
+.piolibdeps/
+*.bin
+*.elf
+*.map
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~

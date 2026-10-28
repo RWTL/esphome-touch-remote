@@ -8,6 +8,10 @@
 esphome:
   name: ${device_name}
   friendly_name: ${friendly_name}
+  min_version: 2026.10.0
+  project:
+    name: "rwtl.esphome_touch_remote"
+    version: "0.1.0"
   on_boot:
     - priority: -100
       then:
@@ -102,7 +106,10 @@ light:
     output: backlight_output
     id: backlight
     name: "Backlight"
-    restore_mode: RESTORE_AND_ON   # always turns back on, at the brightness chosen in Settings
+    initial_state:
+      state: ON
+    restore_state:
+      state: ON                    # always turns back on at the saved brightness
     default_transition_length: 0s
 
 display:

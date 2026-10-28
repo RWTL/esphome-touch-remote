@@ -68,6 +68,19 @@ esphome/
 
 The first compile downloads the fonts (Montserrat from Google Fonts and Material Design Icons from GitHub), so an internet connection is needed.
 
+For a configuration without the author's entity names, copy [`esphome/ha-remote.example.yaml`](esphome/ha-remote.example.yaml) over `esphome/ha-remote.yaml` and edit the example entities. `secrets.yaml`, ESPHome build directories and compiled firmware are excluded by `.gitignore`.
+
+## Versions and compatibility
+
+Releases follow [Semantic Versioning](https://semver.org/). The current project version is **0.1.0** and is embedded in the firmware device information.
+
+| Project release | ESPHome | Status |
+|---|---|---|
+| 0.1.0 | 2026.10.x | Configuration validated; hardware regression test still required |
+| Earlier snapshots | Unspecified | Unsupported |
+
+The configuration sets `esphome.min_version` to prevent compilation with an older, incompatible ESPHome release. See [`CHANGELOG.md`](CHANGELOG.md) for release notes and [`docs/RELEASING.md`](docs/RELEASING.md) for the release checklist.
+
 ## Customisation
 
 Everything happens in the `packages:` section of `ha-remote.yaml`. The included file uses my own entities as an example.
